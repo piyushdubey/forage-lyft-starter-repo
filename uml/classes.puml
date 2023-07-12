@@ -1,0 +1,28 @@
+@startuml
+class Car {
+- last_service_date: datetime    
+- {abstract}needs_service(): bool 
+}
+
+class CapuletEngine {
+- current_mileage:  number
+- last_service_mileage:  number
+- engine_should_be_serviced(): bool
+}
+
+class SternmanEngine {
+- warning_light_is_on: bool
+- engine_should_be_serviced(): bool
+}
+
+class WilloughbyEngine {
+- current_mileage:  number
+- last_service_mileage: number
+- engine_should_be_serviced(): bool
+}
+
+
+CapuletEngine <|-- Car
+SternmanEngine <|--  Car
+WilloughbyEngine <|-- Car
+@enduml
